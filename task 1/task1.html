@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <title>task1</title>
+     
+    </head>
+<body  style="background-color:beige">
+    
+<center>
+<h1><b>Temperature Converter</b></h1>
+<hr>  
+</center>
+<center>
+<p>
+  <label for="temp">type:</label>
+  <select name="temperature" id="temp">
+  <option id="choose" value="choose">choose</option>
+  <option id="celcius" value="celcius">celcius to fahrenheit</option>
+  <option id="fahrenheit" value="fahrenheit">fahrenheit to celcius</option> 
+  </select>
+  <br>
+  <br>
+  <label>degrees</label>
+  <input id="inputcelcius" type="number" 
+  oninput="temperatureConverter(this.value)" onchange="temperatureConverter(this.value)">
+</p>
+
+<p>result: <span id="outputcelcius">
+</span>
+<span id="outputfahrenheit"></span></p>
+<button id="clear">Reset</button>
+</center>
+<script>
+
+document.getElementById('clear').onclick = clear;
+function temperatureConverter(valNum){
+  valNum = parseFloat(valNum);
+  if(temp.value==="celcius"){document.getElementById("outputcelcius").innerHTML=(valNum*1.8)+32;}
+else if(temp.value==="fahrenheit"){document.getElementById("outputfahrenheit").innerHTML=(valNum-32)*(5/9);}
+}
+function clear() {
+
+  document.getElementById('inputcelcius').value ='';
+  document.getElementById('outputcelcius').innerHTML=" ";
+  document.getElementById('outputfahrenheit').innerHTML=" ";
+  document.getElementById('temp').value ="choose";
+} 
+
+</script>
+</body>
+</html>
+
+                                                                                
